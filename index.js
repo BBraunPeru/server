@@ -1,9 +1,11 @@
 const express = require('express');
 const axios = require('axios')
 const cheerio = require('cheerio');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 5000;
+app.use(cors()); // Habilita todas las solicitudes CORS
 
 app.get('/', (req, res) => {
   const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSCAy68uApPsLb6woXJrn7BjGHayFmqy9TCNYljHm84R4l67ObjKIisnm0dnuckCAK4-Nh_o9dt4Uud/pubhtml';
